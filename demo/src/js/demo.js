@@ -8,7 +8,6 @@ import './tab-focus';
 import 'custom-event-polyfill';
 import 'url-polyfill';
 
-import * as Sentry from '@sentry/browser';
 import Shr from 'shr-buttons';
 
 import Plyr from '../../../src/js/plyr';
@@ -21,10 +20,10 @@ import toggleClass from './toggle-class';
 
   // Sentry for demo site (https://plyr.io) only
   if (isProduction) {
-    Sentry.init({
-      dsn: 'https://d4ad9866ad834437a4754e23937071e4@sentry.io/305555',
-      whitelistUrls: [production].map((d) => new RegExp(`https://(([a-z0-9])+(.))*${d}`)),
-    });
+    // Sentry.init({
+    //   dsn: 'https://d4ad9866ad834437a4754e23937071e4@sentry.io/305555',
+    //   whitelistUrls: [production].map((d) => new RegExp(`https://(([a-z0-9])+(.))*${d}`)),
+    // });
   }
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -62,6 +61,9 @@ import toggleClass from './toggle-class';
         enabled: true,
         src: ['https://cdn.plyr.io/static/demo/thumbs/100p.vtt', 'https://cdn.plyr.io/static/demo/thumbs/240p.vtt'],
       },
+      trim: {
+        enabled: true
+      },
       vimeo: {
         // Prevent Vimeo blocking plyr.io demo site
         referrerPolicy: 'no-referrer',
@@ -95,6 +97,10 @@ import toggleClass from './toggle-class';
         ],
       },
     });
+
+    console.log(player);
+    console.log(player.trim);
+    player.trim.enter()
 
     // Expose for tinkering in the console
     window.player = player;
