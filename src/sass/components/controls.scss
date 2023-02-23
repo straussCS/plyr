@@ -53,6 +53,7 @@
 .plyr [data-plyr='captions'],
 .plyr [data-plyr='pip'],
 .plyr [data-plyr='airplay'],
+.plyr [data-plyr='trim'],
 .plyr [data-plyr='fullscreen'] {
   display: none;
 }
@@ -60,6 +61,7 @@
 .plyr--captions-enabled [data-plyr='captions'],
 .plyr--pip-supported [data-plyr='pip'],
 .plyr--airplay-supported [data-plyr='airplay'],
+.plyr--trim-enabled [data-plyr='trim'],
 .plyr--fullscreen-enabled [data-plyr='fullscreen'] {
   display: inline-block;
 }

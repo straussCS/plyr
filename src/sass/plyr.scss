@@ -28,6 +28,7 @@ $css-vars-use-native: true;
 @import 'base';
 @import 'components/badges';
 @import 'components/captions';
+@import 'components/trim';
 @import 'components/control';
 @import 'components/controls';
 @import 'components/menus';
@@ -42,5 +43,7 @@ $css-vars-use-native: true;
 @import 'states/fullscreen';
 @import 'plugins/ads';
 @import 'plugins/preview-thumbnails/index';
+@import 'plugins/trim';
+
 @import 'utils/animation';
 @import 'utils/hidden';
